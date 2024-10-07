@@ -1,5 +1,4 @@
 <script lang="ts">
-    import ArmorStatus from "./ArmorStatus.svelte";
     import {listen} from "../../../../integration/ws.js";
     import type {PlayerData} from "../../../../integration/types";
     import {REST_BASE} from "../../../../integration/host";
@@ -54,20 +53,6 @@
                     />
                 </div>
             </div>
-            <div class="armor-stats">
-                {#if target.armorItems[3].count > 0}
-                    <ArmorStatus itemStack={target.armorItems[3]} />
-                {/if}
-                {#if target.armorItems[2].count > 0}
-                    <ArmorStatus itemStack={target.armorItems[2]} />
-                {/if}
-                {#if target.armorItems[1].count > 0}
-                    <ArmorStatus itemStack={target.armorItems[1]} />
-                {/if}
-                {#if target.armorItems[0].count > 0}
-                    <ArmorStatus itemStack={target.armorItems[0]} />
-                {/if}
-            </div>
         </div>    
         
         <HealthProgress maxHealth={target.maxHealth + target.absorption} health={target.actualHealth + target.absorption} />
@@ -116,14 +101,6 @@
                 display: inline-block;
             }
         }
-    }
-
-    .armor-stats {
-        grid-area: d;
-        display: flex;
-        align-items: center;
-        column-gap: 10px;
-        padding-left: 5px;
     }
 
     .avatar {
