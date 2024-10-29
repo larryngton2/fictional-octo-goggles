@@ -13,3 +13,5 @@ This directory contains the source code of LiquidBounce's default theme made wit
 5. Run `npm run dev` to start a development server.
 
 Make sure not to push the changes made to `host.ts` and `NettyServer.kt`!
+
+- error was here
